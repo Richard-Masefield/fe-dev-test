@@ -1,0 +1,86 @@
+h1, h2, h3, h4, h5, h6, p, ul, ol, li, a, p, dl, dt, dd
+	margin: 0
+	padding: 0
+
+html
+	-webkit-font-smoothing: antialiased
+	-moz-osx-font-smoothing: grayscale
+
+body 
+	font-family: $century-gothic
+	color: $copy-default
+	+font-size(16, no, 24)
+	+min-break($tablet)
+		+font-size(14, no, 24)
+
+// headings
+h1, h2, h3, h4, h5, h6
+
+h1
+	+font-size(26, 20, 28)
+	text-transform: uppercase
+	letter-spacing: -2px
+	strong
+		color: $black
+	+min-break($tablet)
+		+font-size(55, 35, 60)
+		letter-spacing: -3px
+	+min-break($desktop)
+		+font-size(55, 25, 60)
+
+
+// ul + li and variations of default lists
+ul, ol
+	list-style: none
+	margin-bottom: 35px
+	li
+		// inherit body font properties
+		margin-bottom: 10px
+		padding-left: 15px
+		display: block
+		position: relative
+		&:last-child
+			margin-bottom: 0
+
+ol li
+	padding: 0
+	&:before 
+		display: none
+		content: "" 
+		position: relative
+
+// strong + b
+strong
+	font-weight: 700
+b
+	font-weight: 700
+	&.semi
+		font-weight: 600
+
+// text-helpers
+.uppercase 
+	text-transform: uppercase
+
+// Links
+a
+	text-decoration: none
+	color: $black
+	transition: all .3s
+	.main-content &
+		&:visited
+			color: lighten($black, 10%)
+			outline: none
+			&:hover
+				color: darken($black, 10%)
+		&:active
+			color: brown
+	&:hover
+		color: darken($black, 10%)
+		outline: none
+		text-decoration: underline
+	&:visited
+		color: inherit
+
+// Superscript
+sup
+	top: -.25em

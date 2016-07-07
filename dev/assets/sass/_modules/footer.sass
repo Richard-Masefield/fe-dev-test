@@ -1,0 +1,75 @@
+// Footer styles
+footer
+	position: relative
+	width: 100%
+	height: auto
+	margin: 0
+	padding: 25px 0 15px
+	overflow: hidden
+	z-index: 10
+	+min-break($tablet)
+		position: absolute
+		bottom: 0
+		padding: 20px 0
+		overflow: visible
+	+min-break($desktop)
+		position: relative
+		bottom: auto
+		margin: -144px 0 0
+	// TFG logo
+	.footer-logo
+		position: absolute
+		bottom: -20px
+		width: auto
+		margin: 0
+		padding: 10px
+		background-color: $black
+		text-align: center
+		img
+			max-width: 22px
+			margin-bottom: 14px
+		+min-break($tablet)
+			padding: 20px
+			img
+				max-width: 32px
+				margin-bottom: 104px
+				+min-break($desktop)
+					margin-bottom: 134px
+	// Partner logos
+	ul
+		max-width: 880px
+		margin: 10px 0 0
+		padding: 0
+		li
+			margin: 0 20px 10px 0
+			padding: 0
+			+min-break($tablet)
+				&:nth-child(n+7):nth-child(-n+13)
+					margin-right: 33px
+	p
+		margin-bottom: 20px
+	+min-break($tablet)
+		ul,
+		p
+			padding-left: 104px
+	// off footer blackeem paragraph
+	.blackeem
+		position: relative
+				
+		+min-break($tablet)
+			position: absolute
+			top: -60px
+			right: 0
+	// Legal stuff
+	.legal
+		a
+			color: white
+		small
+			display: block
+			+font-size(9, no, 12)
+			padding: 10px 0 0 52px
+			float: none
+			+min-break($tablet)
+				float: left
+				text-align: left
+				padding-left: 104px

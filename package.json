@@ -1,0 +1,29 @@
+{
+  "name": "TFG_interstitial",
+  "version": "0.1.0",
+  "author": "Richie & Peteskie",
+  "private": true,
+  "devDependencies": {
+    "assemble": "~0.4.33",
+    "autoprefixer": "^6.3.6",
+    "css-sprite": "^0.9.9",
+    "grunt": "~0.4.0",
+    "grunt-autoprefixer": "^3.0.4",
+    "grunt-compile-handlebars": "^1.0.1",
+    "grunt-contrib-concat": "*",
+    "grunt-contrib-copy": "^0.7.0",
+    "grunt-contrib-cssmin": "*",
+    "grunt-contrib-sass": "*",
+    "grunt-contrib-uglify": "*",
+    "grunt-contrib-watch": "*",
+    "grunt-cssc": "*",
+    "grunt-livereload": "^0.1.3",
+    "grunt-prettify": "^0.3.5",
+    "http": "0.0.0",
+    "matchdep": "*",
+    "path": "^0.12.7"
+  },
+  "dependencies": {
+    "bindings": "~1.2.1"
+  }
+}

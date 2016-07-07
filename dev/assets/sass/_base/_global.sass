@@ -1,0 +1,170 @@
+////////////////////////////////////////////////////
+//////////////// BACKGROUND COLOURS ////////////////
+////////////////////////////////////////////////////
+
+.bg-white
+	background-color: $white
+.text-error
+	color: $error-color
+
+////////////////////////////////////////////////////
+/////////////////// GLOBAL STYLES /////////////////
+////////////////////////////////////////////////////
+
+html,
+body
+	width: 100%
+	height: auto
+	&.no-scroll,
+	.no-js &
+		position: fixed
+		height: 100%
+		z-index: 0
+		overflow: hidden
+	+min-break($tablet)
+		height: 100%
+
+body
+	overflow-x: hidden // fixes overflow scroll on mobile
+
+hr
+	width: 100%
+	border: none
+	height: 1px
+	background-color: $white
+	margin: 0 0 40px
+
+.text-left, .text-left *
+	text-align: left
+.text-center, .text-center *
+	text-align: center
+.text-right, .text-right *
+	text-align: right
+.text-top, .text-top *
+	vertical-align: text-top
+
+
+////////////////////////////////////////////////////
+/////////////////// V-ALIGN CONTENT ////////////////
+////////////////////////////////////////////////////
+
+.tbl
+	width: 100%
+	height: auto
+	.tbl-cell
+		min-height: 100%
+	// Tablet and up
+	+min-break($tablet)
+		display: table
+		min-height: 100%
+		.tbl-cell
+			display: table-cell
+			vertical-align: middle
+			
+
+////////////////////////////////////////////////////
+/////////////////// IMG VARIATIONS /////////////////
+////////////////////////////////////////////////////
+
+figure
+	margin: 0
+	padding: 0
+
+.responsive
+	//max-width: 100%
+	width: 100%
+	display: block
+	height: auto
+	margin: 0 auto
+
+// Full screen backgrounds
+.cover
+	+min-break($smart)
+		background-position: center bottom
+		background-size: cover
+		background-repeat: no-repeat
+		// Maintain aspect ratio width only on mobile
+	&.maintain
+		background-position: center bottom
+		background-size: 100%
+		+min-break($tablet)
+			background-position: center
+			background-size: cover
+		+min-break($desktop)
+			background-position: right center
+
+// Swap inline to background images
+.bg
+	display: block
+	width: 100%
+	height: auto
+	+min-break($smart)
+		display: none
+		.no-js &
+			display: block
+		// Show on mobile and then hied on tablet
+		&.inline
+			display: block
+			+min-break($tablet)
+				display: none
+
+
+////////////////////////////////////////////////////
+/////////////////////// DISPLAY ////////////////////
+////////////////////////////////////////////////////
+
+.hidden
+	display: none
+
+.screen-reader-text
+	display: none
+	&:focus
+		display: block
+
+.transparent
+	width: 100%
+	opacity: 0
+	display: none
+
+// For resticting long lines of text to 1 line with ...
+.truncate
+	overflow: hidden
+	text-overflow: ellipsis
+	white-space: nowrap
+
+////////////////////////////////////////////////////
+/////////////////////// TRANSITIONS ////////////////
+////////////////////////////////////////////////////
+
+.no-transition, .no-transition *
+	transition: none
+
+////////////////////////////////////////////////////
+/////////////////////// BUTTONS ////////////////////
+////////////////////////////////////////////////////
+
+%btn
+	float: left
+	width: 100%
+	height: auto
+	padding: 15px 20px
+	font-size: 16px
+	font-weight: 700
+	text-align: center
+	text-transform: uppercase
+	color: $white
+	background-color: $black
+	border: none
+	&:hover,
+	&:focus
+		color: $white
+		background-color: lighten($black, 10%)
+		text-decoration: none
+	// desktop
+	+min-break($tablet)
+		width: auto
+
+// apply to all buttons
+.btn,
+button
+	@extend %btn
