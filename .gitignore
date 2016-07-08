@@ -1,0 +1,15 @@
+site/*
+!site/assets/
+
+site/assets/*
+!site/assets/img/
+!site/assets/fonts/
+
+dev/assets/css/*
+*.DS_Store
+.DS_Store
+*.sln
+Web.config
+*.sass-cache
+node_modules
+npm-debug.log
