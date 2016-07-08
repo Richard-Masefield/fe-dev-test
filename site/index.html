@@ -39,61 +39,48 @@
 	</div>
 </header><!-- Homepage content -->
 <div class="loader">
-
 </div>
-<div role="main" id="main"> 
-	
-        <div class="container-fluid">
-            <div class="row">
-            <style>
-                .clip-svg {
-                  clip-path: url(#myClip);
-                }
-            </style>
-            	<!-- <img src="http://images.mentalfloss.com/sites/default/files/borat_primary.jpg" alt="" class="clip-svg"> -->
-              <video src="assets/video/rinse.mp4" class="clip-svg" loop="true" autoplay="true"></video>
-                <svg width="0" height="0">
-                  <defs>
-                    <clipPath id="myClip">
-                      <circle cx="206" cy="128" r="125"/>
-                    </clipPath>
-                  </defs>
-                </svg>          
-            </div>
-        </div>
-  
+<div role="main" id="main">
+   <div class="container-fluid">
+      <div class="row">
+      </div>
+   </div>
 </div>
-
 <!-- global footer content -->
 <footer>
-	<div class="container">
-		<div class="row">
+	<div class="container-fluid light-grey-bg footer-nav">
+		<div class="row ">
+			<div class="col-1-2">
+				<ul class="nav"><li><a href="#">Products</a></li><li><a href="#">Support</a></li><li><a href="#">Lifestyle</a></li><li><a href="#">About</a></li><li><a href="#">Contact</a></li></ul>
+			</div>
+			<div class="col-1-2 right">
+				<ul class="social">
+					<li><a href="#"><i class="icon facebook"></i></a></li>
+					<li><a href="#"><i class="icon twitter"></i></a></li>
+					<li><a href="#"><i class="icon linkedin"></i></a></li>
+					<li><a href="#"><i class="icon pinterest"></i></a></li>
+					<li><a href="#"><i class="icon youtube"></i></a></li>
+					<li><a href="#"><i class="icon instagram"></i></a></li>
+				</ul>				
+			</div>
         </div>   
 	</div>
-</footer> 	<!-- Alert for users using browsers with disabled JS -->
-	<div class="bg-font-adjust-bg nojs">
-	    <div class="container">
-	        <div class="row">
-	            <!-- New Element - HTML has been added on 12/05/2016 -->
-	            <div class="notification dark-copy col-1-1">
-	                <div class="graphic">
-	                    <i class="icon java-script"></i>
-	                </div>
-	                <div class="desc">
-	                    <p><b>You have disabled JavaScript on your browser.</b> Please enable it for the best user experience.</p>
-	                </div>
-	            </div>
-	        </div>
-	    </div>
-	</div>    <!-- global includes -->
+	<div class="container-fluid copyright">
+		<div class="row">
+			<div class="col-1-2 right">
+				<p>All products shown are for display purposes and specifications may differ from actual products in stores. All product, specifications and data are subject to change without notification to improve reliability.</p>
+			</div>
+		</div>
+	</div>
+</footer> 
+    <!-- global includes -->
     <!-- VENDOR -->
     <script src='assets/js/vendor/jquery-1.9.1.min.js'></script>
     
     <!-- GLOBAL -->
     <script src="assets/js/plugins.js"></script>
     <script src="assets/js/global.js"></script>    <script>
-      document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] +
-      ':35729/livereload.js?snipver=1"></' + 'script>')
+      document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')
     </script>
 </body>
 </html>

@@ -1,32 +1,15 @@
-{{> header/page-top }}
-{{> header/global }}   
+{{> header/page-top }} 
+{{> header/global }}
 <!-- Homepage content -->
 <div class="loader">
-
 </div>
-<div role="main" id="main"> 
-	
-        <div class="container-fluid">
-            <div class="row">
-            <style>
-                .clip-svg {
-                  clip-path: url(#myClip);
-                }
-            </style>
-            	<!-- <img src="http://images.mentalfloss.com/sites/default/files/borat_primary.jpg" alt="" class="clip-svg"> -->
-              <video src="assets/video/rinse.mp4" class="clip-svg" loop="true" autoplay="true"></video>
-                <svg width="0" height="0">
-                  <defs>
-                    <clipPath id="myClip">
-                      <circle cx="206" cy="128" r="125"/>
-                    </clipPath>
-                  </defs>
-                </svg>          
-            </div>
-        </div>
-  
+<div role="main" id="main">
+   <div class="container-fluid">
+      <div class="row">
+         {{> home/home-content }}
+      </div>
+   </div>
 </div>
-
 <!-- global footer content -->
-{{> footer/global }}
+{{> footer/global }} 
 {{> footer/page-bottom }}
