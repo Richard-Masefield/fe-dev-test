@@ -35,8 +35,6 @@ ul, ol
 	margin-bottom: 35px
 	li
 		// inherit body font properties
-		margin-bottom: 10px
-		padding-left: 15px
 		display: block
 		position: relative
 		&:last-child
@@ -64,18 +62,18 @@ b
 // Links
 a
 	text-decoration: none
-	color: $black
+	color: $grey-mid
 	transition: all .3s
 	.main-content &
 		&:visited
-			color: lighten($black, 10%)
+			color: lighten($pink, 10%)
 			outline: none
 			&:hover
-				color: darken($black, 10%)
+				color: darken($pink, 10%)
 		&:active
 			color: brown
 	&:hover
-		color: darken($black, 10%)
+		color: darken($pink, 10%)
 		outline: none
 		text-decoration: underline
 	&:visited
@@ -84,3 +82,11 @@ a
 // Superscript
 sup
 	top: -.25em
+
+// paragraph formatting
+.textleft
+	text-align: left
+.textright
+	text-align: right
+//nav 
+

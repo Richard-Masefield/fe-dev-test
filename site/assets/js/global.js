@@ -1,3 +1,6 @@
+var searchVisible = false;
+var isMobile = false;
+
 // --------------------------------------------------
 // ----- Global for header, footer, search, etc -----
 // --------------------------------------------------
@@ -28,67 +31,36 @@ Modernizr.addTest('isios', function(){
 
 // Global Initialize
 $(document).ready(function () {
-    /* LOADING & LOGO SCALING
-     *************************/
-    var loaderScale = 1;
-
-    function scaleLoader() {
-        $('.loader').css('transform', 'scale(' + loaderScale + ')');
-        // adjust transition duration for subsequent scaling
-        setTimeout(function() {
-            $('.loader').css('transition-duration', '0s')
-        }, 750);
-    }
-    // calculate scale
-    function calcLoaderScale() {
-
-        initLoaderWidth = $('.loader .word').outerWidth();
-        targetLoaderWidth = $(window).width() * 1.525;
-        loaderScale = targetLoaderWidth / initLoaderWidth;
-    }
-    setTimeout(calcLoaderScale, 300);
-    
-
-    // on load (real)
-    var initLoadTime = new Date();
-    
-    $('#main').imagesLoaded({
-        background: 'img.bg'
-    }, function() {
-        // calculate time to load images
-        var loadTime = new Date() - initLoadTime;
-        // calculate extra time to add on to loading animation for 'circle' to complete spin
-        var extraTime = 1000 - (loadTime % 1000);
-        setTimeout(function() {
-            $('body').addClass('loaded');
-            scaleLoader();
-        }, extraTime);
-    });
-
-    /* HOME PANELS
-     *************************/
-    $('.home-panel').click(function() {
-        var $this = $(this);
-        // set active panel
-        $this.addClass('active').css('overflow', 'visible');
-        // set background shade class
-        if ($this.filter('[data-shade=dark]').hasClass('active')) {
-            $('body').addClass('dark-bg');
-        } else {
-            $('body').removeClass('dark-bg');
+   
+    //Search
+    function setSearchVisible(visible)
+    {
+        if(screenType == "smart")
+                isMobile = true;
+        if (visible == searchVisible)
+            return;
+        searchVisible = visible;
+        $(".search-box")[searchVisible ? "addClass" : "removeClass"]("active");
+        // $(".site-header .search-box input")[searchVisible ? "focus" : "blur"]();
+        if (searchVisible)
+        {
+            $(".search-box input").attr("placeholder", isMobile ? "Search..." : "Start typing").val("");
+            setTimeout(function() {
+                $(".site-header .search-box input").focus();
+            }, 100);
         }
+    }
+    $("header .search").click(function() {
+        setSearchVisible(!searchVisible);
     });
-    // On panel click
-    $('.home-panel').click(function(e) {
-        e.preventDefault();
-        var href = $(this).attr('href');
-        setTimeout(function() {
-            window.location = href
-        }, 450);
+    $("header .search-box input").blur(function() {
+        setSearchVisible(false);
     });
+    $("header .close").click(function() {
+        setSearchVisible(false);
+    })
 
-
-     // Replace img src based on device screen size
+    // Replace img src based on device screen size
     if ($('img.responsive').length) {
         responsiveImages();
     }
@@ -110,8 +82,7 @@ $(document).ready(function () {
         if ($('img.bg').length) {
             swapImgSource();
         }
-        calcLoaderScale();
-        scaleLoader();
+
     });
 
     $(window).trigger('resize');
