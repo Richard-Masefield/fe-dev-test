@@ -32,6 +32,8 @@ Modernizr.addTest('isios', function(){
 // Global Initialize
 $(document).ready(function () {
    
+   // bg vid
+    //$('.hero').vide(); // Non declarative initialization
     //Search
     function setSearchVisible(visible)
     {
@@ -41,7 +43,6 @@ $(document).ready(function () {
             return;
         searchVisible = visible;
         $(".search-box")[searchVisible ? "addClass" : "removeClass"]("active");
-        // $(".site-header .search-box input")[searchVisible ? "focus" : "blur"]();
         if (searchVisible)
         {
             $(".search-box input").attr("placeholder", isMobile ? "Search..." : "Start typing").val("");
@@ -56,10 +57,15 @@ $(document).ready(function () {
     $("header .search-box input").blur(function() {
         setSearchVisible(false);
     });
-    $("header .close").click(function() {
+    $("header .search-box .close").click(function() {
         setSearchVisible(false);
     })
 
+    $(".menu").click(function(e) {
+        e.preventDefault();
+        $("header").toggleClass("open");
+    });        
+    
     // Replace img src based on device screen size
     if ($('img.responsive').length) {
         responsiveImages();

@@ -1,3 +1,4 @@
+$mob-pad: 30px
 body 
 	background-color: $white
 // Main 
@@ -9,11 +10,52 @@ body
 	padding: 0
 	z-index: 10
 	background-color: transparent
-	+min-break($tablet)
-		position: absolute
+	font-size: 14px
+	.container, .container-fluid
+		.row
+			padding: 0 $mob-pad/2
+	.hero
+		width: 100%
+		padding: 32% 0
+		h1
+			font-size: 2.7em
+			line-height: 1em
+			margin-bottom: $mob-pad
+		p
+			display: table-cell
+			font-size: 0.8em
+			height: inherit
+			line-height: 1.5em
+			vertical-align: middle
+			width: auto
+		+min-break($smart-landscape)
+			h1
+				font-size: 3em
+			p
+				font-size: 1em
+
+	.fusion	
+		background-color: $white
+		border-top-right-radius: 42px
+		border-bottom-right-radius: 42px
+		height: 84px
+		margin: 0 0 $mob-pad -30px
+		padding: 0 100px 0 30px
+		color: $blue
+		position: relative
+		float: left
+		.aqua
+			+sprite($aqua)
+			position: absolute
+			right: 20px
+			top: 50%
+			margin-top: -28px
+		p strong
+			font-family: $cg_bold
+			font-weight: normal
 	+min-break($desktop)
 		position: relative
 		min-height: 100%
-		padding: 0
+		
 	 
 

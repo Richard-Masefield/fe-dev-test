@@ -33,7 +33,7 @@
 		<div class="row">
 			<div class="col-8-10">
 				<!-- Logo -->
-					<img src="assets/img/logo.png" alt="DEFY logo" class="logo">
+					<a href="/" class="logo"><img src="assets/img/logo.png" alt="DEFY logo" ></a>
 				<!-- nav -->
 				<ul class="nav">
 					<li><a href="">Products</a></li>
@@ -54,14 +54,27 @@
 			  </form>
 			  <div class="close icon"></div>
 			</div>
+			<a class="menu" href="#menu">
+				<span></span>
+			</a>
 		</div>
 	</div>
 </header><!-- Homepage content -->
 <div class="loader">
 </div>
 <div role="main" id="main">
-   <div class="container-fluid">
+   <div class="container-fluid hero" data-vide-bg="assets/video/hero_bg" data-vide-options="posterType: jpg, loop: true, resizing: true, muted: true, position: 0% 0%">
       <div class="row">
+         
+         	<div class="col-1-2">
+         		<h1><span class="tight">8<span>kg</span></span><br>Autowasher</h1>
+         		<div class="fusion">
+         			<p><strong> Aquafusion Technology </strong><br>clean more, consume less</p>
+         			<span class="icon aqua"></span>
+         		</div>
+         		<a href="/" class="btn clear blue">View</a>
+         	</div>
+         
       </div>
    </div>
 </div>
@@ -96,7 +109,8 @@
     
     <!-- GLOBAL -->
     <script src="assets/js/plugins.js"></script>
-    <script src="assets/js/global.js"></script>    <script>
+    <script src="assets/js/global.js"></script>
+    <script src="assets/js/vendor/jquery.vide.min.js"></script>    <script>
       document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')
     </script>
 </body>
