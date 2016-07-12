@@ -70,6 +70,35 @@ $(document).ready(function() {
             swapImgSource();
         })
     }
+    $('.right').click(function(){
+        goSlide(1)
+    })
+    $('.left').click(function(){
+        goSlide(0)
+    })
+    currSlide = 0
+    function goSlide(dir){
+        if(currSlide >=0 && currSlide <= 5){
+            if(dir){
+                if(currSlide != 5)
+                    currSlide++
+                else
+                    return;
+            }else{
+                currSlide--
+                if(currSlide == -1){
+                  currSlide = 0;
+                  return;  
+                } 
+            }
+            
+            appX = $('.appliances ul').position().left;
+            nextX = $('.appliances ul li:eq('+ currSlide +')').position().left;
+            $('.appliances ul').animate({
+                left: -nextX + 'px'
+            },500);
+        }
+    }
     // Additional class support for breakpoints
     $(window).resize(function() {
         //check if we need the scrollers
@@ -96,11 +125,12 @@ function checkScrollerSize(){
             $eval = (row.width()/3) - 11;
             if($eval >= 140){
                 $(li).css('width', $eval)
-                $(ul).css('width', $eval*7)
-            }            
+                $(ul).css('width', $eval*7+40)
+            }          
         }else{
             $(li).css('width', '')
             $(ul).css('width', '')
+            $(ul).css('left', '')
         }
     resetScreenVars();
     if(screenType == "smart"){

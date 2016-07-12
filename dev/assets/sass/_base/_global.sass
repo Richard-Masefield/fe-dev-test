@@ -35,9 +35,9 @@ body
 hr
 	width: 100%
 	border: none
-	height: 1px
-	background-color: $white
-	margin: 0 0 40px
+	height: 0px
+	background-color: none
+	margin: 0
 
 .text-left, .text-left *
 	text-align: left
@@ -61,8 +61,10 @@ ul, li
 .tbl
 	width: 100%
 	height: auto
+	display: table
 	.tbl-cell
 		min-height: 100%
+		display: table-cell
 	// Tablet and up
 	+min-break($tablet)
 		display: table
@@ -159,7 +161,7 @@ figure
 	height: auto
 	padding: 5px 30px
 	font-size: 16px
-	font-weight: 700
+	font-weight: normal
 	text-align: center
 	text-transform: uppercase
 	background-color: transparent
